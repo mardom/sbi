@@ -457,7 +457,8 @@ def prepare_for_sbi(simulator: Callable, prior,) -> Tuple[Callable, Distribution
 
     One of the goals is to allow you to use sbi with inputs computed in numpy.
 
-    Attempts to meet the following requirements by reshaping and type-casting:<br/>
+    Attempts to meet the following requirements by reshaping and type-casting:
+
     - the simulator function receives as input and returns a Tensor.<br/>
     - the simulator can simulate batches of parameters and return batches of data.<br/>
     - the prior does not produce batches and samples and evaluates to Tensor.<br/>
@@ -522,9 +523,9 @@ def check_estimator_arg(estimator: Union[str, Callable]) -> None:
     )
 
 
-def check_theta_and_x(theta: Any, x: Any) -> None:
+def validate_theta_and_x(theta: Any, x: Any) -> None:
     r"""
-    Checks if the passe $(\theta, x)$ are valid.
+    Checks if the passed $(\theta, x)$ are valid.
 
     Specifically, we check:
     1) If they are tensors.

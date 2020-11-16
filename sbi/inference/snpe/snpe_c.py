@@ -140,7 +140,7 @@ class SNPE_C(PosteriorEstimator):
             Density estimator that approximates the distribution $p(\theta|x)$.
         """
 
-        # WARNING: sneaky trick ahead. We proxy the parent's `__call__` here,
+        # WARNING: sneaky trick ahead. We proxy the parent's `train` here,
         # requiring the signature to have `num_atoms`, save it for use below, and
         # continue. It's sneaky because we are using the object (self) as a namespace
         # to pass arguments between functions, and that's implicit state management.
